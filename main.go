@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/luis300997/api_ceva/controlers"
 
 	"github.com/gin-contrib/cors"
 	"github.com/subosito/gotenv"
@@ -22,6 +23,8 @@ func main() {
 		ExposeHeaders:   []string{"Content-Length", "Content-type"},
 		MaxAge:          36000,
 	}))
+
+	router.GET("/temperatura", controlers.GetLast5Temps)
 
 	router.Run()
 }
