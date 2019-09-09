@@ -2,7 +2,6 @@ package models
 
 import (
 	"context"
-	"log"
 
 	"github.com/luis300997/api_ceva/database"
 
@@ -16,21 +15,15 @@ type Temperatura struct {
 }
 
 //GetAllTemperatura retorna as ultimas 5
-func GetAllTemperatura() ([]Temperatura, error) {
+func GetAllTemperatura() (map[string]Temperatura, error) {
 	db, err := database.Connect()
 	if err != nil {
 		return nil, err
 	}
-	var temps []Temperatura
-	var a map[Temperatura]interface{}
+	var a map[string]Temperatura
 	q := db.NewRef("temp").OrderByKey().LimitToFirst(5)
 	if err := q.Get(context.Background(), &a); err != nil {
 		return nil, err
 	}
-
-	for aux := range a {
-		log.Println(aux)
-	}
-
-	return temps, nil
+	return a, nil
 }
