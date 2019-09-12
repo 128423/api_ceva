@@ -3,7 +3,7 @@ package models
 import (
 	"context"
 
-	"github.com/luis300997/api_ceva/database"
+	"api_ceva/database"
 
 	"time"
 )

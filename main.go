@@ -3,11 +3,12 @@ package main
 import (
 	"os"
 
+	"api_ceva/controlers"
+
 	"github.com/gin-gonic/gin"
-	"github.com/luis300997/api_ceva/controlers"
+	"github.com/subosito/gotenv"
 
 	"github.com/gin-contrib/cors"
-	"github.com/subosito/gotenv"
 )
 
 func main() {

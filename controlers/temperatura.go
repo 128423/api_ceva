@@ -1,8 +1,9 @@
 package controlers
 
 import (
+	"api_ceva/models"
+
 	"github.com/gin-gonic/gin"
-	"github.com/luis300997/api_ceva/models"
 )
 
 //GetLast5Temps handler
